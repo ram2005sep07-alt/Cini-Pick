@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 7%;
+    --foreground: 40 20% 92%;
+
+    --card: 220 18% 11%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 220 18% 11%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 42 87% 55%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 15% 16%;
+    --secondary-foreground: 40 20% 85%;
+
+    --muted: 220 15% 14%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 42 87% 55%;
+    --accent-foreground: 220 20% 7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 42 87% 55%;
+
+    --radius: 0.75rem;
+
+    --gold: 42 87% 55%;
+    --gold-dim: 42 60% 40%;
+    --surface-hover: 220 15% 20%;
+
+    --sidebar-background: 220 20% 7%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 42 87% 55%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 15% 16%;
+    --sidebar-accent-foreground: 40 20% 85%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 42 87% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(42, 87%, 55%), hsl(35, 90%, 65%), hsl(42, 87%, 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px hsl(42, 87%, 55%, 0.15), 0 0 60px hsl(42, 87%, 55%, 0.05);
+  }
+
+  .card-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(42, 87%, 55%, 0.05), transparent);
+    transition: left 0.5s;
+    z-index: 1;
+  }
+
+  .card-shine:hover::before {
+    left: 100%;
+  }
+}
