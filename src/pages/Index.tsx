@@ -44,8 +44,8 @@ const Index = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="font-display text-5xl tracking-wider sm:text-7xl">
-            FIND YOUR NEXT{" "}
-            <span className="text-gradient-gold">FAVORITE</span>
+            FIND YOUR {" "}
+            <span className="text-gradient-gold">FAVORITE MOVIE </span>
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
             Select a genre and optionally a year to get personalized movie
